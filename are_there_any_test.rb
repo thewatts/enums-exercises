@@ -27,6 +27,12 @@ class AreThereAnyTest < Minitest::Test
     refute has_zero
   end
 
+  def test_has_strings
+    numbers = [3, 1, 10, "asdf1234", 99, 33, "JIMMY" ]
+    # write code here
+    assert has_strings
+  end
+
   def test_no_alice
     skip
     names = %w(chuck charlene cory chris carl)
