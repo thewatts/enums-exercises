@@ -47,5 +47,10 @@ class AreThereAnyTest < Minitest::Test
     assert has_strings
   end
 
+  def test_has_falsey_values
+    items = [3, {}, "", 0, nil, []]
+    assert has_falsey_values
+  end
+
 end
 

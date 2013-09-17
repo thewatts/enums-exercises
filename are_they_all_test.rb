@@ -48,5 +48,12 @@ class AreTheyAllTest < Minitest::Test
     # write code here
     refute all_empty
   end
+  
+  def test_all_truthy
+    things = ["squirrel", "", nil, 0, {}, true, false]
+    # write code here
+    refute all_truthy
+  end
+
 end
 
