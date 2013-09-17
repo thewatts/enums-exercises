@@ -47,5 +47,12 @@ class PickDesiredValuesTest < Minitest::Test
     # write code here
     assert_equal %w(singing shoehorning), selected
   end
+
+  def test_pick_words_that_include_ing_without_ending_in_ing
+    skip
+    words = %w(sing singing slinger slinging swinger swinging)
+    # write code
+    assert_equal %w(slinger swinger)
+  end
 end
 
