@@ -52,7 +52,7 @@ class PickDesiredValuesTest < Minitest::Test
     skip
     words = %w(sing singing slinger slinging swinger swinging)
     # write code
-    assert_equal %w(slinger swinger)
+    assert_equal %w(slinger swinger), results
   end
 end
 

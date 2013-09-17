@@ -51,7 +51,8 @@ class FilterUnwantedValuesTest < Minitest::Test
 
   def test_remove_words
     words = ["four", "score", "and", 7, "years", "ago", nil]
-    assert_equal no_words
+    # write code here
+    assert_equal no_words, remaining
   end
 end
 
