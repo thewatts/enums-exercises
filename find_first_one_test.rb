@@ -18,7 +18,10 @@ class FindFirstOneTest < Minitest::Test
 
     found = nil
     things.each do |thing|
-      found = thing if thing.weird? && found.nil?
+      if thing.weird? && found.nil?
+        found = thing
+        break
+      end
     end
     assert_equal thing3.object_id, found.object_id
   end
@@ -41,7 +44,10 @@ class FindFirstOneTest < Minitest::Test
     
     found = nil
     unicorns.each do |unicorn|
-      found = unicorn if unicorn.pink? && found.nil? 
+      if unicorn.pink? && found.nil? 
+        found = unicorn
+        break
+      end
     end
 
     assert_equal unicorn4.object_id, found.object_id
