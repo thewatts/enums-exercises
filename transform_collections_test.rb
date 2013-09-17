@@ -47,5 +47,12 @@ class TransformCollectionTest < Minitest::Test
     # write code here
     assert_equal %w(ecila bob eilrahc divad eve), backwards
   end
+
+  def test_alphabetical_sorting
+    skip
+    names = %w(bob zander alice james colton bob charlie david eve)
+    # write code here
+    assert_equal %w(alice bob bob charlie colton david eve james zaner)
+  end
 end
 
