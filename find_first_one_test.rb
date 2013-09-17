@@ -1,6 +1,4 @@
-gem 'minitest'
-require 'minitest'
-require 'minitest/pride'
+require './test_helper'
 
 class FindFirstOneTest < Minitest::Test
   Thing = Struct.new(:adjective) do
@@ -20,7 +18,7 @@ class FindFirstOneTest < Minitest::Test
 
     found = nil
     things.each do |thing|
-      # write code here
+      found = thing if thing.weird? && found.nil?
     end
     assert_equal thing3.object_id, found.object_id
   end
@@ -32,7 +30,7 @@ class FindFirstOneTest < Minitest::Test
   end
 
   def test_first_pink_unicorn
-    skip
+    #skip
     unicorn1 = Unicorn.new('white')
     unicorn2 = Unicorn.new('sparkly')
     unicorn3 = Unicorn.new('purple')
@@ -40,8 +38,11 @@ class FindFirstOneTest < Minitest::Test
     unicorn5 = Unicorn.new('pink')
 
     unicorns = [unicorn1, unicorn2, unicorn3, unicorn4, unicorn5]
-
-    # write code here
+    
+    found = nil
+    unicorns.each do |unicorn|
+      found = unicorn if unicorn.pink? && found.nil? 
+    end
 
     assert_equal unicorn4.object_id, found.object_id
   end

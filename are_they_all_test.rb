@@ -1,6 +1,4 @@
-gem 'minitest'
-require 'minitest'
-require 'minitest/pride'
+require './test_helper'
 
 class AreTheyAllTest < Minitest::Test
 
@@ -8,43 +6,48 @@ class AreTheyAllTest < Minitest::Test
     numbers = [0, 0, 0, 0, 1, 0, 0, 0]
     all_zeros = true
     numbers.each do |number|
-      # write code here
+      all_zeros = false if number != 0
     end
     refute all_zeros
   end
 
   def test_all_zeros
-    skip
+    #skip
     numbers = [0, 0, 0, 0, 0, 0, 0, 0]
-    # write code here
+    all_zeros = true
+    numbers.each { |n| all_zeros = false if n != 0 }
     assert all_zeros
   end
 
   def test_all_gone
-    skip
+    #skip
     words = %w(gone gone gone gone gone gone gone)
-    # write code here
+    all_gone = false
+    words.each { |w| all_gone = true if w == "gone" }
     assert all_gone
   end
 
   def test_not_all_gone
-    skip
+    #skip
     words = %w(gone gone gone gone gone gone gone yepp)
-    # write code here
+    all_gone = true
+    words.each { |w| all_gone = false if w != "gone" }
     refute all_gone
   end
 
   def test_all_empty
-    skip
+    #skip
     words = ["", "", "", "", ""]
-    # write code here
+    all_empty = false
+    words.each { |w| all_empty = true if w.empty? }
     assert all_empty
   end
 
   def test_not_all_empty
-    skip
+    #skip
     words = ["full", "", "", "", "", ""]
-    # write code here
+    all_empty = true
+    words.each { |w| all_empty = false unless w.empty? }
     refute all_empty
   end
 end
